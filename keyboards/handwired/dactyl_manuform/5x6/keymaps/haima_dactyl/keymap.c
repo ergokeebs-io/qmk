@@ -51,8 +51,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   XXXXXXX, LCTL(KC_V),               KC_PSCR, XXXXXXX
     ),
 	[_DEV] = LAYOUT_5x6(
-      _______, PIPE,    AT,      HASH,    DOLLAR,   PERCENT,                CIRC,    AMP,       ASTERIX,   LPARENS,   RPARENS,   KC_BSPC, 
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,            XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, 
+      _______, PIPE,    RALT(KC_2),    HASH,    DOLLAR,   PERCENT,                CIRC,    AMP,       ASTERIX,   LPARENS,   RPARENS,   KC_BSPC, 
+      _______, XXXXXXX,    XXXXXXX,    RALT(KC_E), XXXXXXX,  XXXXXXX,            XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, 
       _______, KC_1, KC_2,    KC_3,    KC_4,     KC_5,                      KC_6,    KC_7,      KC_8,      KC_9,      KC_0,      DBL_QUOTE, 
       _______, XXXXXXX, RALT(KC_QUOT), RALT(KC_BSLS), XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX,   KC_GRV,    KC_TILD, SLASH_QUEST,   XXXXXXX, 
                         RALT(KC_LBRC), RALT(KC_RBRC),                               XXXXXXX,    EQUAL_PLUS, 
