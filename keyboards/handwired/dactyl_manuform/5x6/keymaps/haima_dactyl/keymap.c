@@ -17,16 +17,12 @@ enum custom_keycodes {
   DOG,
   DOLLAR,
   EQUAL_PLUS,
-  GREATER,
   HASH,
-  LCURLY,
-  LESSER,
   LPARENS,
   LSQUARE_CURLY,
   MIN_SUP,
   PERCENT,
   PIPE,
-  RCURLY,
   RPARENS,
   RSQUARE_CURLY,
   SLASH_QUEST,
@@ -56,10 +52,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 	[_DEV] = LAYOUT_5x6(
       _______, PIPE,    AT,      HASH,    DOLLAR,   PERCENT,                CIRC,    AMP,       ASTERIX,   LPARENS,   RPARENS,   DOG, 
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  FUNCTION_START,         XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, 
-      _______, KC_1, KC_2, KC_3, KC_4, KC_5,                                KC_6,    KC_7,      KC_8,      KC_9,      KC_0,      DBL_QUOTE, 
-      _______, XXXXXXX, LCURLY, RCURLY, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX,   LESSER,    GREATER, SLASH_QUEST,   XXXXXXX, 
-                   LSQUARE_CURLY, RSQUARE_CURLY,                               XXXXXXX,   EQUAL_PLUS, 
+      _______, KC_B, XXXXXXX, XXXXXXX, XXXXXXX,  FUNCTION_START,            XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, 
+      _______, KC_1, KC_2,    KC_3,    KC_4,     KC_5,                      KC_6,    KC_7,      KC_8,      KC_9,      KC_0,      DBL_QUOTE, 
+      _______, XXXXXXX, RALT(KC_QUOT), RALT(KC_BSLS), XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX,KC_GRV,    KC_TILD, SLASH_QUEST,   XXXXXXX, 
+                        LSQUARE_CURLY, RSQUARE_CURLY,                               XXXXXXX,   EQUAL_PLUS, 
                                   _______, _______,                             _______, _______, 
                                   _______, TG(_CONF),                            _______ , _______, 
                                   XXXXXXX, _______,                             _______, XXXXXXX
@@ -68,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, PIPE, AT,   HASH, DOLLAR, PERCENT,                 CIRC,    AMP,     ASTERIX, LPARENS,   RPARENS,   KC_DEL, 
       _______, KC_1, KC_2, KC_3, KC_4,   KC_5,                    KC_6,    KC_7,    KC_8,    KC_9,      KC_0,      KC_VOLU, 
       _______, _______, _______, _______, _______, _______,       KC_PGUP, KC_LEFT, KC_DOWN, KC_UP,     KC_RIGHT,  KC_VOLD, 
-      _______, _______, _______, _______, _______, _______,       KC_PGDN, _______, LESSER,  GREATER,   SLASH_QUEST,   XXXXXXX,
+      _______, _______, _______, _______, _______, _______,       KC_PGDN, _______, KC_GRV,  KC_TILD,   SLASH_QUEST,   XXXXXXX,
                         LSQUARE_CURLY, RSQUARE_CURLY,                                        _______,   EQUAL_PLUS, 
                                         _______, _______,                       _______, _______, 
                                         _______, _______,                       TG(_CONF), _______, 
@@ -188,17 +184,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
         SEND_STRING(SS_LSFT("]"));
       }
-      break;    
-    case LESSER:
-      if (record->event.pressed) {
-        SEND_STRING("`");
-      }
-      break;    
-    case GREATER:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT("`"));
-      }
-      break;
+      break;      
     case LPARENS:
       if (record->event.pressed) {
         SEND_STRING(SS_LSFT("8"));
@@ -230,16 +216,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         _delay_ms(50);
         SEND_STRING(SS_LCTRL(" "));
       }
-      break;   
-    case LCURLY:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTRL(" "));
-        _delay_ms(50);
-        SEND_STRING(SS_LSFT("["));
-        _delay_ms(50);
-        SEND_STRING(SS_LCTRL(" "));
-      }
-      break;    
+      break;      
     case RSQUARE_CURLY:
       if (record->event.pressed) {
         SEND_STRING(SS_LCTRL(" "));
@@ -249,15 +226,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         } else {
           SEND_STRING("]");
         }
-        _delay_ms(50);
-        SEND_STRING(SS_LCTRL(" "));
-      }
-      break;
-    case RCURLY:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTRL(" "));
-        _delay_ms(50);
-        SEND_STRING(SS_LSFT("]"));
         _delay_ms(50);
         SEND_STRING(SS_LCTRL(" "));
       }
