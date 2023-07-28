@@ -71,11 +71,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______, _______,                       _______, _______
     ),
     [_CONF] = LAYOUT_5x6(
-      _______, QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, _______, 
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX, KC_P7 ,  KC_P8 ,  KC_P9,   XXXXXXX,   XXXXXXX, 
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CG_TOGG,         XXXXXXX, KC_P4 ,  KC_P5 ,  KC_P6,   XXXXXXX,   XXXXXXX, 
-      _______, _______, _______, _______, _______, XXXXXXX,         XXXXXXX, KC_P1 ,  KC_P2 ,  KC_P3,   XXXXXXX,   XXXXXXX,
-                        XXXXXXX, XXXXXXX,                                        KC_P0, XXXXXXX, 
+      _______, QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,  KC_P7,   KC_P8,  KC_P9,   XXXXXXX, _______, 
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,  KC_P4,   KC_P5,  KC_P6,   XXXXXXX,   XXXXXXX, 
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CG_TOGG,         XXXXXXX,  KC_P1,   KC_P2,  KC_P3,   XXXXXXX,   XXXXXXX, 
+      _______, _______, _______, _______, _______, XXXXXXX,         XXXXXXX,  XXXXXXX, KC_P0,  XXXXXXX,   XXXXXXX,   XXXXXXX,
+                        XXXXXXX, XXXXXXX,                                        XXXXXXX, XXXXXXX, 
                                     _______, _______,               _______, _______, 
                                     _______, _______,               _______, _______,
                                     _______, _______,               _______, _______
