@@ -19,12 +19,10 @@ enum custom_keycodes {
   EQUAL_PLUS,
   HASH,
   LPARENS,
-  LSQUARE_CURLY,
   MIN_SUP,
   PERCENT,
   PIPE,
   RPARENS,
-  RSQUARE_CURLY,
   SLASH_QUEST,
 };
 
@@ -65,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, KC_1, KC_2, KC_3, KC_4,   KC_5,                    KC_6,    KC_7,    KC_8,    KC_9,      KC_0,      KC_VOLU, 
       _______, _______, _______, _______, _______, _______,       KC_PGUP, KC_LEFT, KC_DOWN, KC_UP,     KC_RIGHT,  KC_VOLD, 
       _______, _______, _______, _______, _______, _______,       KC_PGDN, _______, KC_GRV,  KC_TILD,   SLASH_QUEST,   XXXXXXX,
-                        LSQUARE_CURLY, RSQUARE_CURLY,                                        _______,   EQUAL_PLUS, 
+                        _______, _______,                                        _______,   EQUAL_PLUS, 
                                         _______, _______,                       _______, _______, 
                                         _______, _______,                       TG(_CONF), _______, 
                                         _______, _______,                       _______, _______
@@ -204,32 +202,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       }
       break;    
-    case LSQUARE_CURLY:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTRL(" "));
-        _delay_ms(50);
-        if (mod_state & MOD_MASK_SHIFT) {
-          SEND_STRING(SS_LSFT("["));
-        } else {
-          SEND_STRING("[");
-        }
-        _delay_ms(50);
-        SEND_STRING(SS_LCTRL(" "));
-      }
-      break;      
-    case RSQUARE_CURLY:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LCTRL(" "));
-        _delay_ms(50);
-        if (mod_state & MOD_MASK_SHIFT) {
-          SEND_STRING(SS_LSFT("]"));
-        } else {
-          SEND_STRING("]");
-        }
-        _delay_ms(50);
-        SEND_STRING(SS_LCTRL(" "));
-      }
-      break;
     case DBL_QUOTE:
       if (record->event.pressed) {
         SEND_STRING(SS_LSFT("2"));
