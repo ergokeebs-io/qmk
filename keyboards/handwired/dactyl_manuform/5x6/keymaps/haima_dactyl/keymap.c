@@ -9,21 +9,7 @@ enum custom_layers {
 
 enum custom_keycodes {
   FUNCTION_START = SAFE_RANGE,
-  AMP,
-  ASTERIX,
-  AT,
-  CIRC,
-  DBL_QUOTE,
-  DOG,
-  DOLLAR,
-  EQUAL_PLUS,
-  HASH,
-  LPARENS,
-  MIN_SUP,
-  PERCENT,
-  PIPE,
-  RPARENS,
-  SLASH_QUEST,
+  PWD,
 };
 
 enum unicode_names {
@@ -52,18 +38,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,     KC_VOLU,
       _______, KC_1,        KC_2,       KC_3,       KC_4,       KC_5,          KC_6,    KC_7,    KC_8,    KC_9,      KC_0,        KC_VOLD, 
       _______, _______,     _______,    _______,    _______,    _______,       KC_HOME, KC_LEFT, KC_DOWN, KC_UP,     KC_RIGHT,    KC_END, 
-      _______, LCTL(KC_Z),  LCTL(KC_X), LCTL(KC_C), LCTL(KC_V), _______,       KC_PGUP, KC_PGDN, KC_GRV,  KC_TILD,   SLASH_QUEST, XXXXXXX,
-                        _______, _______,                                        _______,   EQUAL_PLUS, 
+      _______, LCTL(KC_Z),  LCTL(KC_X), LCTL(KC_C), LCTL(KC_V), _______,       KC_PGUP, KC_PGDN, KC_GRV,  KC_TILD,   XXXXXXX,     XXXXXXX,
+                        _______, _______,                                        _______,   _______, 
                                         _______, _______,                       _______, _______, 
                                         _______, _______,                       TG(_NUMPAD), _______, 
                                         _______, _______,                       _______, _______
     ),
 	[_DEV] = LAYOUT_5x6(
-      _______, XXXXXXX, RALT(KC_2), XXXXXXX,    XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   KC_DEL, 
+      _______, XXXXXXX, RALT(KC_2), XXXXXXX,    XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   _______, 
       _______, XXXXXXX, XXXXXXX,    RALT(KC_E), XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, 
-      _______, XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   DBL_QUOTE, 
-      _______, XXXXXXX, RALT(KC_QUOT), RALT(KC_BSLS), XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX,   KC_GRV,    KC_TILD, SLASH_QUEST, XXXXXXX, 
-                        RALT(KC_LBRC), RALT(KC_RBRC),                               XXXXXXX,    EQUAL_PLUS, 
+      _______, XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, 
+      _______, XXXXXXX, RALT(KC_QUOT), RALT(KC_BSLS), XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX,   KC_GRV,    KC_TILD,   XXXXXXX,  XXXXXXX, 
+                        RALT(KC_LBRC), RALT(KC_RBRC),                               XXXXXXX,    XXXXXXX, 
                                   _______, _______,                             _______, _______, 
                                   _______, TG(_NUMPAD),                            _______ , _______, 
                                   XXXXXXX, _______,                             _______, XXXXXXX
@@ -119,15 +105,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         // Let QMK process the KC_BSPC keycode as usual outside of shift
         return true;
     }
-    case PERCENT:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT("5"));
-      }
-      break;
-    case DOG:
+    case PWD:
       if (record->event.pressed) {
         SEND_STRING("--------");
-        SEND_STRING(SS_LSFT("6"));
       }
       break;    
     case FUNCTION_START:
@@ -138,76 +118,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         _delay_ms(50);
         SEND_STRING(SS_LCTRL(" "));
       }
-      break;
-    case PIPE:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LALT("1"));
-      }
-      break;    
-    case SLASH_QUEST:
-      if (record->event.pressed) {
-        if (mod_state & MOD_MASK_SHIFT) {
-          clear_mods();
-          // SEND_STRING(SS_LSFT("'"));
-        } else {
-          SEND_STRING(SS_LSFT("7"));
-        }
-      }
-      break;
-    case AT:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LALT("2"));
-      }
-      break;
-    case HASH:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LALT("3"));
-      }
-      break;    
-    case DOLLAR:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT("4"));
-      }
-      break;
-    case AMP:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT("6"));
-      }
-      break;      
-    case CIRC:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT("\1\1\x2F")); // don't know why, but it works
-      }
-      break;       
-    case ASTERIX:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT("]"));
-      }
-      break;      
-    case LPARENS:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT("8"));
-      }
-      break;    
-    case RPARENS:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT("9"));
-      }
-      break;        
-    case EQUAL_PLUS:
-      if (record->event.pressed) {
-        if (mod_state & MOD_MASK_SHIFT) {
-          SEND_STRING("+");
-        } else {
-          SEND_STRING(SS_LSFT("0"));
-        }
-      }
-      break;    
-    case DBL_QUOTE:
-      if (record->event.pressed) {
-        SEND_STRING(SS_LSFT("2"));
-      }
-      break;
+      break;              
   }
   return true;
 }
