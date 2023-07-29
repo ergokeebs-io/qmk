@@ -4,7 +4,7 @@ enum custom_layers {
  _BASE,
  _DEV,
  _NAV,
- _CONF
+ _NUMPAD
 };
 
 enum custom_keycodes {
@@ -48,16 +48,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   KC_LGUI, MO(_NAV),                MO(_DEV),   KC_ENT, 
                                   XXXXXXX, LCTL(KC_V),               KC_PSCR, XXXXXXX
     ),
-	[_DEV] = LAYOUT_5x6(
-      _______, XXXXXXX, RALT(KC_2), XXXXXXX,    XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   KC_DEL, 
-      _______, XXXXXXX, XXXXXXX,    RALT(KC_E), XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, 
-      _______, XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   DBL_QUOTE, 
-      _______, XXXXXXX, RALT(KC_QUOT), RALT(KC_BSLS), XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX,   KC_GRV,    KC_TILD, SLASH_QUEST, XXXXXXX, 
-                        RALT(KC_LBRC), RALT(KC_RBRC),                               XXXXXXX,    EQUAL_PLUS, 
-                                  _______, _______,                             _______, _______, 
-                                  _______, TG(_CONF),                            _______ , _______, 
-                                  XXXXXXX, _______,                             _______, XXXXXXX
-    ),
 	[_NAV] = LAYOUT_5x6(
       _______, XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,     KC_VOLU,
       _______, KC_1,        KC_2,       KC_3,       KC_4,       KC_5,          KC_6,    KC_7,    KC_8,    KC_9,      KC_0,        KC_VOLD, 
@@ -65,10 +55,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, LCTL(KC_Z),  LCTL(KC_X), LCTL(KC_C), LCTL(KC_V), _______,       KC_PGUP, KC_PGDN, KC_GRV,  KC_TILD,   SLASH_QUEST, XXXXXXX,
                         _______, _______,                                        _______,   EQUAL_PLUS, 
                                         _______, _______,                       _______, _______, 
-                                        _______, _______,                       TG(_CONF), _______, 
+                                        _______, _______,                       TG(_NUMPAD), _______, 
                                         _______, _______,                       _______, _______
     ),
-    [_CONF] = LAYOUT_5x6(
+	[_DEV] = LAYOUT_5x6(
+      _______, XXXXXXX, RALT(KC_2), XXXXXXX,    XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   KC_DEL, 
+      _______, XXXXXXX, XXXXXXX,    RALT(KC_E), XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, 
+      _______, XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   DBL_QUOTE, 
+      _______, XXXXXXX, RALT(KC_QUOT), RALT(KC_BSLS), XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX,   KC_GRV,    KC_TILD, SLASH_QUEST, XXXXXXX, 
+                        RALT(KC_LBRC), RALT(KC_RBRC),                               XXXXXXX,    EQUAL_PLUS, 
+                                  _______, _______,                             _______, _______, 
+                                  _______, TG(_NUMPAD),                            _______ , _______, 
+                                  XXXXXXX, _______,                             _______, XXXXXXX
+    ),
+
+  [_NUMPAD] = LAYOUT_5x6(
       _______, QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,  KC_P7,   KC_P8,  KC_P9,   XXXXXXX, _______, 
       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,  KC_P4,   KC_P5,  KC_P6,   XXXXXXX, XXXXXXX, 
       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CG_TOGG,         XXXXXXX,  KC_P1,   KC_P2,  KC_P3,   XXXXXXX,   XXXXXXX, 
