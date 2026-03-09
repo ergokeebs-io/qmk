@@ -63,6 +63,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
+        case ES_PIPE:
+            if (record->event.pressed) {
+                tap_code16(RALT(KC_1));
+            }
+            return false;
+
         // ====================================================================
         // RECTANGLE WINDOW MANAGEMENT
         // All shortcuts are Ctrl+Alt+<key>

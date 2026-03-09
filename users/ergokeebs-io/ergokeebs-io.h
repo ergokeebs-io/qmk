@@ -25,6 +25,7 @@ enum ergokeebs_keycodes {
     ES_GRV,                 // ` (backtick)
     ES_QUES,                // ?
     ES_TILD,                // ~
+    ES_PIPE,                // |
 
     // Rectangle window management
     RECT_TL,                // Top Left
