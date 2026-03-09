@@ -65,9 +65,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ========================================================================
     [_RAISE] = LAYOUT(
     // ╭───────────┬───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────┬───────╮
-        KC_ESC,     ES_PIPE,ES_AT,  KC_HASH,KC_DLR, KC_PERC,    KC_CIRC,KC_AMPR,KC_ASTR,KC_MINS,KC_EQL, KC_BSPC,
+        KC_ESC,     ES_EXLM,ES_AT,  KC_HASH,KC_DLR, KC_PERC,    KC_CIRC,KC_AMPR,KC_ASTR,KC_MINS,KC_EQL, KC_BSPC,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        KC_LSFT,    KC_LPRN,KC_LCBR,KC_LBRC,KC_LABK,XXXXXXX,    XXXXXXX,KC_RABK,KC_RBRC,KC_RCBR,KC_RPRN,ES_GRV,
+        KC_LSFT,    ES_LPRN,ES_LCBR,ES_LBRC,ES_LABK,XXXXXXX,    XXXXXXX,ES_RABK,ES_RBRC,ES_RCBR,ES_RPRN,MY_BKTK,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
         KC_LCTL,    KC_UNDS,KC_PLUS,KC_BSLS,KC_PIPE,XXXXXXX,    ES_QUES,XXXXXXX,KC_SLSH,ES_TILD,XXXXXXX,XXXXXXX,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯

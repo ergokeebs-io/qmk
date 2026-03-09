@@ -1,6 +1,7 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
+#include "keymap_spanish.h"
 
 // ============================================================================
 // LAYERS
@@ -20,12 +21,8 @@ enum ergokeebs_layers {
 // ============================================================================
 
 enum ergokeebs_keycodes {
-    // ES Layout hacks
-    ES_AT = SAFE_RANGE,     // @
-    ES_GRV,                 // ` (backtick)
-    ES_QUES,                // ?
-    ES_TILD,                // ~
-    ES_PIPE,                // |
+    // ES Layout: real backtick (dead grave + space)
+    MY_BKTK = SAFE_RANGE,
 
     // Rectangle window management
     RECT_TL,                // Top Left

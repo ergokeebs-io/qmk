@@ -36,36 +36,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
 
         // ====================================================================
-        // ES LAYOUT HACKS
+        // LALT + Q = PIPE (|)
         // ====================================================================
-        case ES_AT:
-            if (record->event.pressed) {
-                tap_code16(RALT(KC_2));
+        case KC_Q:
+            if (record->event.pressed && (mod_state & MOD_BIT(KC_LALT))) {
+                del_mods(MOD_BIT(KC_LALT));
+                tap_code16(ES_PIPE);
+                set_mods(mod_state);
+                return false;
             }
-            return false;
+            return true;
 
-        case ES_GRV:
+        // ====================================================================
+        // ES LAYOUT: Real backtick (dead grave + space)
+        // ====================================================================
+        case MY_BKTK:
             if (record->event.pressed) {
-                tap_code16(RALT(KC_LBRC));
-            }
-            return false;
-
-        case ES_QUES:
-            if (record->event.pressed) {
-                // En ES layout: Shift + - = ?
-                tap_code16(LSFT(KC_MINS));
-            }
-            return false;
-
-        case ES_TILD:
-            if (record->event.pressed) {
-                tap_code16(RALT(KC_4));
-            }
-            return false;
-
-        case ES_PIPE:
-            if (record->event.pressed) {
-                tap_code16(RALT(KC_1));
+                tap_code(KC_LBRC);  // dead grave
+                tap_code(KC_SPC);   // space to produce real backtick
             }
             return false;
 
