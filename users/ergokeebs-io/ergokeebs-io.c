@@ -40,7 +40,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         // ====================================================================
         case KC_Q:
             if (record->event.pressed && (mod_state & MOD_BIT(KC_LALT))) {
-                del_mods(MOD_BIT(KC_LALT));
+                clear_mods();
                 tap_code16(ES_PIPE);
                 set_mods(mod_state);
                 return false;
@@ -54,6 +54,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 tap_code(KC_LBRC);  // dead grave
                 tap_code(KC_SPC);   // space to produce real backtick
+            }
+            return false;
+
+        // ====================================================================
+        // < and > for macOS Spanish non-ISO
+        // ====================================================================
+        case MY_LABK:
+            if (record->event.pressed) {
+                tap_code(KC_GRV);  // < on ES non-ISO
+            }
+            return false;
+
+        case MY_RABK:
+            if (record->event.pressed) {
+                tap_code16(S(KC_GRV));  // > on ES non-ISO
             }
             return false;
 

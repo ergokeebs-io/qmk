@@ -14,6 +14,7 @@ enum ergokeebs_layers {
     _ADJUST,
     _POINTER,
     _RECT,
+    _RALT,
 };
 
 // ============================================================================
@@ -23,6 +24,9 @@ enum ergokeebs_layers {
 enum ergokeebs_keycodes {
     // ES Layout: real backtick (dead grave + space)
     MY_BKTK = SAFE_RANGE,
+    // Unicode: < and > for non-ISO Spanish
+    MY_LABK,
+    MY_RABK,
 
     // Rectangle window management
     RECT_TL,                // Top Left
@@ -73,3 +77,4 @@ enum ergokeebs_tap_dances {
 // ============================================================================
 
 #define OSM_SFT OSM(MOD_LSFT)
+#define RALT_LY MO(_RALT)

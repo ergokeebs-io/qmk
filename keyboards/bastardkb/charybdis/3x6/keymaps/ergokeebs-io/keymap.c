@@ -38,9 +38,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
         OSM_SFT,    KC_A,   KC_S,   KC_D,   KC_F,   KC_G,       KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        KC_LCTL,    PT_Z,   PT_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RALT,
+        KC_LCTL,    PT_Z,   PT_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,RALT_LY,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
-                                    KC_LGUI,KC_ENT, LOWER,      RAISE,  KC_SPC
+                                    KC_ENT, KC_LGUI, LOWER,      RAISE,  KC_SPC
     //                             ╰───────┴───────┴───────╯   ╰───────┴───────╯
     ),
 
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
         KC_LCTL,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,    KC_HOME,KC_PGDN,KC_PGUP,KC_END, XXXXXXX,XXXXXXX,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
-                                    KC_LGUI,KC_ENT, _______,    _______, KC_SPC
+                                    KC_ENT, KC_LGUI, _______,    _______, KC_SPC
     //                             ╰───────┴───────┴───────╯   ╰───────┴───────╯
     ),
 
@@ -65,13 +65,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ========================================================================
     [_RAISE] = LAYOUT(
     // ╭───────────┬───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────┬───────╮
-        KC_ESC,     ES_EXLM,ES_AT,  KC_HASH,KC_DLR, KC_PERC,    KC_CIRC,KC_AMPR,KC_ASTR,KC_MINS,KC_EQL, KC_BSPC,
+        KC_ESC,     ES_EXLM,ES_DQUO,ES_BULT,ES_DLR, ES_PERC,    ES_AMPR,ES_SLSH,ES_LPRN,ES_RPRN,ES_EQL, KC_BSPC,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        KC_LSFT,    ES_LPRN,ES_LCBR,ES_LBRC,ES_LABK,XXXXXXX,    XXXXXXX,ES_RABK,ES_RBRC,ES_RCBR,ES_RPRN,MY_BKTK,
+        KC_LSFT,    ES_LPRN,ES_LCBR,ES_LBRC,MY_LABK,XXXXXXX,    XXXXXXX,MY_RABK,ES_RBRC,ES_RCBR,ES_RPRN,MY_BKTK,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        KC_LCTL,    KC_UNDS,KC_PLUS,KC_BSLS,KC_PIPE,XXXXXXX,    ES_QUES,XXXXXXX,KC_SLSH,ES_TILD,XXXXXXX,XXXXXXX,
+        KC_LCTL,    KC_UNDS,ES_PLUS,KC_BSLS,KC_PIPE,XXXXXXX,    ES_QUES,XXXXXXX,KC_SLSH,ES_TILD,XXXXXXX,XXXXXXX,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
-                                    KC_LGUI,KC_ENT, _______,    _______, KC_SPC
+                                    KC_ENT, KC_LGUI, _______,    _______, KC_SPC
     //                             ╰───────┴───────┴───────╯   ╰───────┴───────╯
     ),
 
@@ -87,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
         XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,EE_CLR, XXXXXXX,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
-                                    KC_LGUI,KC_ENT, _______,    _______, KC_SPC
+                                    KC_ENT, KC_LGUI, _______,    _______, KC_SPC
     //                             ╰───────┴───────┴───────╯   ╰───────┴───────╯
     ),
 
@@ -120,6 +120,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX,    RECT_L, RECT_C, RECT_R, XXXXXXX,XXXXXXX,    XXXXXXX,RECT_13L,RECT_13C,RECT_13R,XXXXXXX,XXXXXXX,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
         XXXXXXX,    XXXXXXX,_______,RECT_BR,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+    // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
+                                    XXXXXXX,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX
+    //                             ╰───────┴───────┴───────╯   ╰───────┴───────╯
+    ),
+
+    // ========================================================================
+    // LAYER 6: RALT (AltGr symbols)
+    // Activated by holding RALT key
+    // @ and # on number row positions 2 and 3
+    // ========================================================================
+    [_RALT] = LAYOUT(
+    // ╭───────────┬───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────┬───────╮
+        XXXXXXX,    XXXXXXX,ES_AT,  ES_HASH,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+    // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
+        XXXXXXX,    XXXXXXX,XXXXXXX,ES_EURO,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+    // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
+        XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,_______,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
                                     XXXXXXX,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX
     //                             ╰───────┴───────┴───────╯   ╰───────┴───────╯

@@ -11,7 +11,7 @@
 // TAPPING BEHAVIOR
 // ============================================================================
 
-#define TAPPING_TERM 200
+#define TAPPING_TERM 150
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 // ============================================================================
