@@ -73,6 +73,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
 
         // ====================================================================
+        // Tilde (~) for macOS Spanish non-ISO (Alt+ñ)
+        // ====================================================================
+        case MY_TILD:
+            if (record->event.pressed) {
+                tap_code16(LALT(KC_SCLN));  // Alt+ñ
+            }
+            return false;
+
+        // ====================================================================
+        // Plus (+) and Asterisk (*) for macOS Spanish non-ISO
+        // ====================================================================
+        case MY_PLUS:
+            if (record->event.pressed) {
+                tap_code(KC_RBRC);  // + on ES non-ISO
+            }
+            return false;
+
+        case MY_ASTR:
+            if (record->event.pressed) {
+                tap_code16(S(KC_RBRC));  // * on ES non-ISO (Shift + +)
+            }
+            return false;
+
+        // ====================================================================
         // RECTANGLE WINDOW MANAGEMENT
         // All shortcuts are Ctrl+Alt+<key>
         // ====================================================================

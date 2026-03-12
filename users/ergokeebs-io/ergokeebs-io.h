@@ -27,6 +27,11 @@ enum ergokeebs_keycodes {
     // Unicode: < and > for non-ISO Spanish
     MY_LABK,
     MY_RABK,
+    // Tilde for non-ISO Spanish (Alt+ñ)
+    MY_TILD,
+    // Plus and asterisk for non-ISO Spanish
+    MY_PLUS,
+    MY_ASTR,
 
     // Rectangle window management
     RECT_TL,                // Top Left
