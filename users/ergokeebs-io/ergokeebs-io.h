@@ -34,20 +34,14 @@ enum ergokeebs_keycodes {
     MY_ASTR,
 
     // Rectangle window management
-    RECT_TL,                // Top Left
-    RECT_T,                 // Top Half
-    RECT_TR,                // Top Right
-    RECT_L,                 // Left Half
-    RECT_C,                 // Center
-    RECT_R,                 // Right Half
-    RECT_BL,                // Bottom Left
-    RECT_BR,                // Bottom Right
-    RECT_13L,               // First Third
-    RECT_13C,               // Center Third
-    RECT_13R,               // Last Third
-    RECT_23L,               // First Two Thirds
-    RECT_23C,               // Center Two Thirds
-    RECT_23R,               // Last Two Thirds
+    RECT_L,                 // Left Half (1/2)
+    RECT_R,                 // Right Half (1/2)
+    RECT_13L,               // First Third (1/3)
+    RECT_13R,               // Last Third (1/3)
+    RECT_14L,               // First Fourth (1/4)
+    RECT_14R,               // Last Fourth (1/4)
+    RECT_16L,               // First Sixth (1/6)
+    RECT_16R,               // Last Sixth (1/6)
 
     // Password/macros
     MY_PWD,

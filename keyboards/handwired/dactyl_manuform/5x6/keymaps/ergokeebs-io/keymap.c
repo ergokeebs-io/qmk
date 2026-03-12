@@ -126,13 +126,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     // ========================================================================
-    // LAYER 5: RECT (placeholder - optional window management)
+    // LAYER 5: RECT (Window Management)
+    // Symmetric: left hand = move left, right hand = move right
+    // Ring=1/6, Middle=1/4, Index=1/3, Inner index=1/2
     // ========================================================================
     [_RECT] = LAYOUT_5x6(
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, RECT_16L,RECT_14L,RECT_13L,RECT_L,     RECT_R,  RECT_13R,RECT_14R,RECT_16R,XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                           XXXXXXX, XXXXXXX,                                        XXXXXXX, XXXXXXX,
                                    XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX,
                                    XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX,

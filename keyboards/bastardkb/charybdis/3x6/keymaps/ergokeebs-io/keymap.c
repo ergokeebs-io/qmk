@@ -110,16 +110,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ========================================================================
     // LAYER 5: RECTANGLE (Window Management)
     // Activated by holding X
-    // Left hand: screen position map (QWE/ASD/ZV)
-    // Right hand: thirds (UIO/JKL)
+    // Symmetric: left hand = move left, right hand = move right
+    // Ring=1/6, Middle=1/4, Index=1/3, Inner index=1/2
     // ========================================================================
     [_RECT] = LAYOUT(
     // ╭───────────┬───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────┬───────╮
-        XXXXXXX,    RECT_TL,RECT_T, RECT_TR,XXXXXXX,XXXXXXX,    XXXXXXX,RECT_23L,RECT_23C,RECT_23R,XXXXXXX,XXXXXXX,
+        XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        XXXXXXX,    RECT_L, RECT_C, RECT_R, XXXXXXX,XXXXXXX,    XXXXXXX,RECT_13L,RECT_13C,RECT_13R,XXXXXXX,XXXXXXX,
+        XXXXXXX,    XXXXXXX,RECT_16L,RECT_14L,RECT_13L,RECT_L,  RECT_R, RECT_13R,RECT_14R,RECT_16R,XXXXXXX,XXXXXXX,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        XXXXXXX,    XXXXXXX,_______,RECT_BR,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+        XXXXXXX,    XXXXXXX,_______,XXXXXXX,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
                                     XXXXXXX,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX
     //                             ╰───────┴───────┴───────╯   ╰───────┴───────╯

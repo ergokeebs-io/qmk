@@ -98,89 +98,54 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         // ====================================================================
         // RECTANGLE WINDOW MANAGEMENT
-        // All shortcuts are Ctrl+Alt+<key>
+        // Symmetric layout: left hand = left, right hand = right
+        // Ring=1/6, Middle=1/4, Index=1/3, Inner=1/2
         // ====================================================================
-        case RECT_TL:
-            if (record->event.pressed) {
-                tap_code16(LCTL(LALT(KC_U)));
-            }
-            return false;
-
-        case RECT_T:
-            if (record->event.pressed) {
-                tap_code16(LCTL(LALT(KC_UP)));
-            }
-            return false;
-
-        case RECT_TR:
-            if (record->event.pressed) {
-                tap_code16(LCTL(LALT(KC_I)));
-            }
-            return false;
-
-        case RECT_L:
+        case RECT_L:  // Left Half (G key)
             if (record->event.pressed) {
                 tap_code16(LCTL(LALT(KC_LEFT)));
             }
             return false;
 
-        case RECT_C:
-            if (record->event.pressed) {
-                tap_code16(LCTL(LALT(KC_DOWN)));
-            }
-            return false;
-
-        case RECT_R:
+        case RECT_R:  // Right Half (H key)
             if (record->event.pressed) {
                 tap_code16(LCTL(LALT(KC_RGHT)));
             }
             return false;
 
-        case RECT_BL:
-            if (record->event.pressed) {
-                tap_code16(LCTL(LALT(KC_J)));
-            }
-            return false;
-
-        case RECT_BR:
-            if (record->event.pressed) {
-                tap_code16(LCTL(LALT(KC_K)));
-            }
-            return false;
-
-        case RECT_13L:
+        case RECT_13L:  // First Third (F key)
             if (record->event.pressed) {
                 tap_code16(LCTL(LALT(KC_D)));
             }
             return false;
 
-        case RECT_13C:
-            if (record->event.pressed) {
-                tap_code16(LCTL(LALT(KC_F)));
-            }
-            return false;
-
-        case RECT_13R:
+        case RECT_13R:  // Last Third (J key)
             if (record->event.pressed) {
                 tap_code16(LCTL(LALT(KC_G)));
             }
             return false;
 
-        case RECT_23L:
+        case RECT_14L:  // First Fourth (D key)
             if (record->event.pressed) {
-                tap_code16(LCTL(LALT(KC_E)));
+                tap_code16(LCTL(LALT(LSFT(KC_LEFT))));
             }
             return false;
 
-        case RECT_23C:
+        case RECT_14R:  // Last Fourth (K key)
             if (record->event.pressed) {
-                tap_code16(LCTL(LALT(KC_R)));
+                tap_code16(LCTL(LALT(LSFT(KC_RGHT))));
             }
             return false;
 
-        case RECT_23R:
+        case RECT_16L:  // First Sixth (S key)
             if (record->event.pressed) {
-                tap_code16(LCTL(LALT(KC_T)));
+                tap_code16(LCTL(LALT(LSFT(KC_1))));
+            }
+            return false;
+
+        case RECT_16R:  // Last Sixth (L key)
+            if (record->event.pressed) {
+                tap_code16(LCTL(LALT(LSFT(KC_6))));
             }
             return false;
 
