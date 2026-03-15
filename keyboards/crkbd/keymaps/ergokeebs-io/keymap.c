@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
         OSM_SFT,    KC_A,   KC_S,   KC_D,   KC_F,   KC_G,       KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        KC_LCTL,    KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,RALT_LY,
+        KC_LCTL,    PT_Z,   PT_X,   KC_C,   KC_V,   KC_B,       KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,RALT_LY,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
                                     KC_ENT, KC_LGUI, LOWER,      RAISE,  KC_SPC, KC_RALT
     //                             ╰───────┴───────┴───────╯   ╰───────┴───────╯
@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ╭───────────┬───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────┬───────╮
         KC_ESC,     KC_1,   KC_2,   KC_3,   KC_4,   KC_5,       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_BSPC,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        KC_LSFT,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,    KC_LEFT,KC_UP,  KC_DOWN,KC_RGHT,MY_TILD,XXXXXXX,
+        KC_LSFT,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,    XXXXXXX,KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,XXXXXXX,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
         KC_LCTL,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,    KC_HOME,KC_PGDN,KC_PGUP,KC_END, XXXXXXX,XXXXXXX,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
@@ -66,9 +66,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ╭───────────┬───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────┬───────╮
         KC_ESC,     ES_EXLM,ES_DQUO,ES_BULT,ES_DLR, ES_PERC,    ES_AMPR,ES_SLSH,ES_LPRN,ES_RPRN,ES_EQL, KC_BSPC,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        KC_LSFT,    ES_LPRN,ES_LCBR,ES_LBRC,MY_LABK,XXXXXXX,    XXXXXXX,MY_RABK,ES_RBRC,ES_RCBR,ES_RPRN,MY_BKTK,
+        KC_LSFT,    ES_LPRN,ES_LCBR,ES_LBRC,MY_LABK,XXXXXXX,    ES_QUOT,MY_RABK,ES_RBRC,ES_RCBR,ES_RPRN,MY_BKTK,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        KC_LCTL,    KC_UNDS,ES_PLUS,KC_BSLS,KC_PIPE,XXXXXXX,    ES_QUES,XXXXXXX,MY_ASTR,MY_PLUS,XXXXXXX,XXXXXXX,
+        KC_LCTL,    KC_UNDS,ES_PLUS,KC_BSLS,KC_PIPE,XXXXXXX,    ES_QUES,XXXXXXX,MY_ASTR,MY_PLUS,MY_TILD,XXXXXXX,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
                                     KC_ENT, KC_LGUI, _______,    _______, KC_SPC, KC_RALT
     //                             ╰───────┴───────┴───────╯   ╰───────┴───────╯
@@ -81,9 +81,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ╭───────────┬───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────┬───────╮
         XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,SGUI(KC_4),SGUI(KC_5),LGUI(LALT(KC_I)),XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,QK_BOOT,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        RGB_TOG,    RGB_HUI,RGB_SAI,RGB_VAI,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+        XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        RGB_MOD,    RGB_HUD,RGB_SAD,RGB_VAD,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,EE_CLR, XXXXXXX,
+        XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,EE_CLR, XXXXXXX,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
                                     KC_ENT, KC_LGUI, _______,    _______, KC_SPC, KC_RALT
     //                             ╰───────┴───────┴───────╯   ╰───────┴───────╯
