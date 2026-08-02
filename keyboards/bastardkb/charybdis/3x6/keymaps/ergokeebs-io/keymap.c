@@ -94,6 +94,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ========================================================================
     // LAYER 4: POINTER (Trackball)
     // Activated by holding Z
+    // Z+X sends F18: Karabiner turns it into scroll for ANY pointing device
+    // (external Marble trackball included). Native QMK drag-scroll, which only
+    // works on the onboard ball, moved to Z+V.
     // ========================================================================
     [_POINTER] = LAYOUT(
     // ╭───────────┬───────┬───────┬───────┬───────┬───────╮   ╭───────┬───────┬───────┬───────┬───────┬───────╮
@@ -101,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
         XXXXXXX,    KC_LGUI,KC_LALT,KC_LCTL,KC_LSFT,XXXXXXX,    XXXXXXX,KC_RSFT,KC_RCTL,KC_RALT,KC_RGUI,XXXXXXX,
     // ├───────────┼───────┼───────┼───────┼───────┼───────┤   ├───────┼───────┼───────┼───────┼───────┼───────┤
-        XXXXXXX,    _______,DRGSCRL,SNIPING,XXXXXXX,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+        XXXXXXX,    _______,KC_F18, SNIPING,DRGSCRL,XXXXXXX,    XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
     // ╰───────────┴───────┴───────┴───────┼───────┼───────┤   ├───────┼───────┼───────┴───────┴───────┴───────╯
                                     KC_BTN2,KC_BTN1,KC_BTN3,    KC_BTN1,KC_BTN2
     //                             ╰───────┴───────┴───────╯   ╰───────┴───────╯
